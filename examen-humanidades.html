@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Examen Humanidades | CECyTEM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.exam-question{
+background:#f8fafc;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+border-left:5px solid var(--secondary);
+}
+.exam-question label{
+display:block;
+margin-bottom:6px;
+cursor:pointer;
+}
+.resultado{
+font-size:1.4rem;
+font-weight:bold;
+text-align:center;
+margin-top:30px;
+}
+.aprobado{color:green;}
+.reprobado{color:red;}
+</style>
+</head>
+
+<body>
+
+<main class="main-content">
+
+<section class="section-card">
+
+<h1>Examen de Humanidades</h1>
+<p>20 preguntas de opción múltiple</p>
+
+<form id="quiz"></form>
+
+<div style="text-align:center;">
+<button class="btn-enviar" type="button" onclick="calificar()">Calificar</button>
+<br><br>
+<a href="humanidades.html" class="btn-oficial">
+<i class="fas fa-arrow-left"></i> Volver a Humanidades
+</a>
+</div>
+
+<div class="resultado" id="resultado"></div>
+
+</section>
+</main>
+
+<script>
+const preguntas = [
+/* CONTRATO SOCIAL */
+["¿Qué es el contrato social?",["Acuerdo entre individuos y el Estado","Una ley natural","Un castigo","Un sistema económico"],0],
+["Filósofo asociado al contrato social:",["Rousseau","Aristóteles","Platón","Descartes"],0],
+["¿Para qué sirve el contrato social?",["Organizar la sociedad","Eliminar leyes","Aumentar riqueza","Crear guerras"],0],
+["El contrato social busca:",["Orden y convivencia","Esclavitud","Dominio","Violencia"],0],
+["Según Rousseau, la soberanía reside en:",["El pueblo","El rey","La iglesia","El ejército"],0],
+
+/* ESCLAVITUD */
+["¿Qué es la esclavitud?",["Privación de libertad","Forma de educación","Sistema político","Derecho humano"],0],
+["La esclavitud implica:",["Explotación","Libertad","Igualdad","Justicia"],0],
+["¿Qué derecho viola la esclavitud?",["Libertad","Educación","Trabajo","Propiedad"],0],
+["La esclavitud fue abolida porque:",["Viola derechos humanos","Era rentable","Era legal","Era moderna"],0],
+["La esclavitud afecta principalmente a:",["La dignidad humana","La tecnología","La economía","La ciencia"],0],
+
+/* HUELLA ECOLÓGICA */
+["¿Qué es la huella ecológica?",["Impacto ambiental humano","Recurso natural","Tipo de energía","Área protegida"],0],
+["La huella ecológica mide:",["Consumo de recursos","Velocidad","Población","Educación"],0],
+["Una huella ecológica alta indica:",["Mayor daño ambiental","Mayor educación","Menos consumo","Equilibrio"],0],
+["Reducir la huella ecológica implica:",["Cuidar el ambiente","Consumir más","Contaminar","Deforestar"],0],
+["Ejemplo de reducción de huella ecológica:",["Reciclar","Talar árboles","Contaminar ríos","Desperdiciar agua"],0],
+
+/* MIXTO */
+["El contrato social promueve:",["Convivencia","Esclavitud","Caos","Dominio"],0],
+["La esclavitud contradice:",["Los derechos humanos","La economía","La tecnología","La ciencia"],0],
+["La huella ecológica se relaciona con:",["Sustentabilidad","Violencia","Política","Esclavitud"],0],
+["Una sociedad justa se basa en:",["Respeto y leyes","Fuerza","Dominio","Control"],0],
+["El respeto al medio ambiente contribuye a:",["El bienestar social","La esclavitud","El consumo excesivo","La desigualdad"],0]
+];
+
+const quiz = document.getElementById("quiz");
+
+preguntas.forEach((p,i)=>{
+let opciones="";
+p[1].forEach((op,j)=>{
+opciones+=`
+<label>
+<input type="radio" name="p${i}" value="${j}"> ${op}
+</label>`;
+});
+quiz.innerHTML+=`
+<div class="exam-question">
+<h4>${i+1}. ${p[0]}</h4>
+${opciones}
+</div>`;
+});
+
+function calificar(){
+let score=0;
+
+for(let i=0;i<preguntas.length;i++){
+const r=document.querySelector('input[name="p'+i+'"]:checked');
+if(!r){
+alert("Debes responder todas las preguntas antes de calificar.");
+return;
+}
+if(parseInt(r.value)===preguntas[i][2]) score++;
+}
+
+let mensaje = score>=12
+? `<span class="aprobado">APROBADO</span>`
+: `<span class="reprobado">REPROBADO</span>`;
+
+document.getElementById("resultado").innerHTML =
+`Resultado: ${score} / 20 <br>${mensaje}`;
+}
+</script>
+
+</body>
+</html>

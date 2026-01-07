@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Académico - CECyTEM Cuautitlán</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    
+
+    <a href="#inicio" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="img/logo-cecytem.png" alt="Logo CECyTEM" class="logo-principal">
+        </div>
+        
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> <span>Inicio</span></a></li>
+                <li><a href="frameworks.html"><i class="fas fa-code"></i> <span>Emplea Frameworks</span></a></li>
+                <li><a href="matematicas.html"><i class="fas fa-calculator"></i> <span>Pensamiento Matemático</span></a></li>
+                <li><a href="ingles.html"><i class="fas fa-language"></i> <span>Inglés</span></a></li>
+                <li><a href="humanidades.html"><i class="fas fa-globe-americas"></i> <span>Humanidades</span></a></li>
+                <li><a href="#contacto"><i class="fas fa-envelope"></i> <span>Contacto</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="info-sidebar">
+            <div class="reloj-box">
+                <i class="far fa-clock"></i>
+                <div class="time-data">
+                    <span id="reloj-digital">00:00:00 p.m.</span>
+                    <span id="fecha-actual">Cargando fecha...</span>
+                </div>
+            </div>
+            <div class="visitantes-box">
+                <i class="fas fa-users"></i>
+                <span>Visitantes: <strong id="visitantes">0</strong></span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <section id="inicio" class="section-card">
+            <div class="header-main">
+                <div class="title-group">
+                    <h1>Portal Académico Digital</h1>
+                    <p>Ecosistema de aprendizaje para el Tercer Semestre | Ciclo 2025</p>
+                </div>
+                <div class="badge-status">Cecytem Plantel Cuautitlan</div>
+            </div>
+
+            <div class="welcome-container">
+                <div class="welcome-text">
+                    <h2>Nuestra Misión Digital</h2>
+                    <p>Este portal ha sido diseñado como un <strong>centro de recursos centralizado</strong> para los estudiantes del CECyTEM Plantel Cuautitlán. Más que una página informativa, es una extensión de nuestra aula física.</p>
+                    
+                    <div class="vision-cards">
+                        <div class="vision-item">
+                            <i class="fas fa-bullseye"></i>
+                            <p><strong>Objetivo:</strong> Facilitar el acceso a guías, prácticas de programación y recursos multimedia en un solo lugar.</p>
+                        </div>
+                        <div class="vision-item impact">
+                            <i class="fas fa-rocket"></i>
+                            <p><strong>Impacto:</strong> Potenciar el autoaprendizaje y la preparación técnica para el mundo laboral.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="official-cta">
+                        <p>¿Buscas trámites administrativos o convocatorias oficiales?</p>
+                        <a href="https://cecytem.edomex.gob.mx/" target="_blank" class="btn-oficial">
+                            Ir al Sitio Oficial CECyTEM <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="welcome-video">
+                    <h3 style="text-decoration: underline;">Oferta Educativa CECyTEM Plantel Cuautitlán</h3>
+                    <div class="video-wrapper">
+                        <video controls>
+                            <source src="videos/presentacion.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="materias" class="section-card" style="margin-top: 40px;">
+            <div class="section-header-text">
+                <h2>Explora tus Asignaturas</h2>
+                <p>Haz clic en las imágenes para acceder a los contenidos detallados de cada materia.</p>
+            </div>
+
+            <div class="topics-grid">
+                <article class="topic-item" onclick="window.location.href='https://blog.mikecodeur.com/es/post/comenzar-con-react-y-vite-la-guia-completa'">
+                    <div class="image-zoom-container">
+                        <img src="img/fw-bg.jpg" alt="Frameworks">
+                        <div class="overlay-hover"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="topic-content">
+                        <h4>Emplea Frameworks</h4>
+                        <p class="topic-desc">Dominio de herramientas modernas para el desarrollo web profesional.</p>
+                        <ul class="topic-list">
+                            <li><i class="fas fa-check"></i> Introducción a React y Vite</li>
+                            <li><i class="fas fa-check"></i> Arquitectura de Componentes</li>
+                            <li><i class="fas fa-check"></i> Gestión de estados y Props</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="topic-item" onclick="window.location.href='https://www.matesfacil.com/ERCDerivadas.htm'">
+                    <div class="image-zoom-container">
+                        <img src="img/math-bg.jpg" alt="Cálculo">
+                        <div class="overlay-hover"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="topic-content">
+                        <h4>Pensamiento Matemático</h4>
+                        <p class="topic-desc">Análisis de funciones y comportamiento del cambio en variables.</p>
+                        <ul class="topic-list">
+                            <li><i class="fas fa-check"></i> Límites y Continuidad</li>
+                            <li><i class="fas fa-check"></i> Reglas de Derivación</li>
+                            <li><i class="fas fa-check"></i> Ecuacion De La Recta Normal y Tangente</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="topic-item" onclick="window.location.href='https://quizlet.com/mx/content/temas-de-ingles'">
+                    <div class="image-zoom-container">
+                        <img src="img/en-bg.jpg" alt="Inglés">
+                        <div class="overlay-hover"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="topic-content">
+                        <h4>Inglés III</h4>
+                        <p class="topic-desc">Comunicación efectiva en contextos pasados y situaciones hipotéticas.</p>
+                        <ul class="topic-list">
+                            <li><i class="fas fa-check"></i> Past Simple</li>
+                            <li><i class="fas fa-check"></i> Pronouns</li>
+                            <li><i class="fas fa-check"></i> Daily Routine</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="topic-item" onclick="window.location.href='https://concepto.de/humanidades/'">
+                    <div class="image-zoom-container">
+                        <img src="img/hum-bg.jpg" alt="Humanidades">
+                        <div class="overlay-hover"><i class="fas fa-eye"></i></div>
+                    </div>
+                    <div class="topic-content">
+                        <h4>Humanidades</h4>
+                        <p class="topic-desc">Reflexión crítica sobre el impacto humano en la sociedad y el planeta.</p>
+                        <ul class="topic-list">
+                            <li><i class="fas fa-check"></i> Esclavitud</li>
+                            <li><i class="fas fa-check"></i> Contrato Social</li>
+                            <li><i class="fas fa-check"></i> Huella Ecológica</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    
+        <section id="contacto" class="section-card" style="margin-top: 40px;">
+            <div class="contact-header">
+                <h2>Ubicación del Plantel</h2>
+                <p>CECyTEM Plantel Cuautitlán</p>
+            </div>
+
+            <div class="contact-instructions">
+                <ul>
+                    <li><strong>Dirección:</strong> CECyTEM Plantel Cuautitlán, Paseos del Bosque S/N Lote 2, Ex Hacienda Camino a Rancho Xaltipa, 54850 Cuautitlán, Méx.</li>
+                    <li><strong>Teléfono:</strong> +525520646219</li>
+                </ul>
+            </div>
+
+            <div style="margin-top:20px; border-radius:15px; overflow:hidden;">
+                <iframe 
+                    src="https://www.google.com/maps?q=CECyTEM%20Cuautitl%C3%A1n&output=embed"
+                    width="100%" 
+                    height="380" 
+                    style="border:0;" 
+                    allowfullscreen 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+       
+
+        <footer style="margin-top: 40px; text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem;">
+            &copy; 2025 Portal de Aprendizaje Tercer Semestre Cecytem | Diseñado por Joshua David Padrón Santos
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

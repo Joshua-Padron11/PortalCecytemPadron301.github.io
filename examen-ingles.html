@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Examen Inglés | CECyTEM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.exam-question{
+background:#f8fafc;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+border-left:5px solid var(--secondary);
+}
+.exam-question label{
+display:block;
+margin-bottom:6px;
+cursor:pointer;
+}
+.resultado{
+font-size:1.4rem;
+font-weight:bold;
+text-align:center;
+margin-top:30px;
+}
+.aprobado{color:green;}
+.reprobado{color:red;}
+</style>
+</head>
+
+<body>
+
+<main class="main-content">
+<section class="section-card">
+
+<h1>Examen de Inglés</h1>
+<p>20 preguntas de opción múltiple</p>
+
+<form id="quiz"></form>
+
+<div style="text-align:center;">
+<button class="btn-enviar" type="button" onclick="calificar()">Calificar</button>
+<br><br>
+<a href="ingles.html" class="btn-oficial">
+<i class="fas fa-arrow-left"></i> Volver a Inglés
+</a>
+</div>
+
+<div class="resultado" id="resultado"></div>
+
+</section>
+</main>
+
+<script>
+const preguntas = [
+["¿Cómo se dice 'Hola' en inglés?",["Hello","Bye","Thanks","Please"],0],
+["Traducción de 'Gracias'",["Sorry","Thanks","Please","Hello"],1],
+["Verbo 'ser / estar'",["Have","Do","Be","Go"],2],
+["Pasado de 'go'",["Goed","Went","Gone","Going"],1],
+["Pronombre personal",["Run","He","Big","Fast"],1],
+["Traducción de 'Casa'",["Car","House","Dog","School"],1],
+["Plural de 'child'",["Childs","Childes","Children","Child"],2],
+["Significado de 'Good morning'",["Buenas noches","Buenas tardes","Buenos días","Hola"],2],
+["I ___ happy",["am","is","are","be"],0],
+["¿Cuál es un color?",["Run","Blue","Eat","Big"],1],
+["Traducción de 'Perro'",["Cat","Dog","Bird","Fish"],1],
+["¿Cuál es un número?",["Ten","Red","Fast","Go"],0],
+["Pasado de 'eat'",["Eated","Ate","Eating","Eats"],1],
+["Significado de 'Please'",["Gracias","Por favor","Perdón","Hola"],1],
+["Artículo indefinido",["The","An","This","That"],1],
+["Traducción de 'Escuela'",["House","School","Park","Store"],1],
+["Pronombre de 'ella'",["He","She","It","They"],1],
+["¿Cuál es un verbo?",["Happy","Run","Blue","Big"],1],
+["Forma negativa de 'is'",["is not","does not","are not","was"],0],
+["¿Cuál es el plural de 'mouse'?",["Mouses","Mouse","Mice","Mices"],2]
+];
+
+const quiz=document.getElementById("quiz");
+
+preguntas.forEach((p,i)=>{
+let opciones="";
+p[1].forEach((op,j)=>{
+opciones+=`
+<label>
+<input type="radio" name="p${i}" value="${j}"> ${op}
+</label>`;
+});
+quiz.innerHTML+=`
+<div class="exam-question">
+<h4>${i+1}. ${p[0]}</h4>
+${opciones}
+</div>`;
+});
+
+function calificar(){
+let score=0;
+
+for(let i=0;i<preguntas.length;i++){
+const r=document.querySelector('input[name="p'+i+'"]:checked');
+if(!r){
+alert("Debes responder todas las preguntas antes de calificar.");
+return;
+}
+if(parseInt(r.value)===preguntas[i][2]) score++;
+}
+
+let mensaje = score>=12
+? `<span class="aprobado">APROBADO</span>`
+: `<span class="reprobado">REPROBADO</span>`;
+
+document.getElementById("resultado").innerHTML =
+`Resultado: ${score} / 20 <br>${mensaje}`;
+}
+</script>
+
+</body>
+</html>

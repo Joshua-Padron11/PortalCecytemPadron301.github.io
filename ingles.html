@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Inglés | CECyTEM Cuautitlán</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .mini-menu{
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            justify-content:center;
+            margin:30px 0;
+        }
+        .mini-menu a{
+            background:var(--secondary);
+            color:white;
+            padding:10px 18px;
+            border-radius:30px;
+            text-decoration:none;
+            font-size:.85rem;
+            display:flex;
+            align-items:center;
+            gap:8px;
+            transition:.3s;
+        }
+        .mini-menu a:hover{
+            background:var(--accent);
+            transform:translateY(-3px);
+        }
+        .tema{
+            margin-bottom:60px;
+        }
+        .tema-grid{
+            display:grid;
+            grid-template-columns:2fr 1fr;
+            gap:30px;
+        }
+        .tema img{
+            width:100%;
+            border-radius:20px;
+            box-shadow:var(--shadow-lg);
+            transition:.3s;
+            cursor:pointer;
+        }
+        .tema img:hover{
+            transform:scale(1.03);
+        }
+        .ejemplos{
+            background:#f8fafc;
+            border-left:5px solid var(--accent);
+            padding:20px;
+            border-radius:12px;
+            margin-top:25px;
+        }
+        .pdf-box{
+            background:#ecfeff;
+            padding:25px;
+            border-radius:18px;
+            margin:50px 0;
+        }
+        @media(max-width:900px){
+            .tema-grid{grid-template-columns:1fr;}
+        }
+
+
+.video-wrapper{
+    max-width:420px;  
+    margin:25px auto;
+}
+.video-wrapper video{
+    width:100%;
+    height:auto;
+    border-radius:12px;
+}
+
+    </style>
+</head>
+
+<body>
+
+<a href="#top" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<aside class="sidebar">
+    <img src="img/logo-cecytem.png" class="logo-principal">
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+            <li><a href="frameworks.html"><i class="fas fa-code"></i><span>Emplea Frameworks</span></a></li>
+            <li><a href="matematicas.html"><i class="fas fa-calculator"></i><span>Pensamiento Matemático</span></a></li>
+            <li><a href="ingles.html" class="active"><i class="fas fa-language"></i><span>Inglés</span></a></li>
+            <li><a href="humanidades.html"><i class="fas fa-globe-americas"></i><span>Humanidades</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="info-sidebar">
+        <div class="reloj-box">
+            <i class="far fa-clock"></i>
+            <div class="time-data">
+                <span id="reloj-digital"></span>
+                <span id="fecha-actual"></span>
+            </div>
+        </div>
+        <div class="visitantes-box">
+            <i class="fas fa-users"></i>
+            Visitantes: <strong id="visitantes">0</strong>
+        </div>
+    </div>
+</aside>
+
+<main class="main-content" id="top">
+
+<section class="section-card">
+
+<center>
+    <h1>Inglés III</h1>
+<p>
+Asignatura del <strong>tercer semestre, tercer parcial</strong>, enfocada en el desarrollo de
+habilidades de comprensión lectora, escritura y comunicación básica en inglés.
+</p>
+</center>
+<div class="mini-menu">
+    <a href="#tema1"><i class="fas fa-clock"></i> Present Simple</a>
+    <a href="#tema2"><i class="fas fa-users"></i> Pronouns</a>
+    <a href="#tema3"><i class="fas fa-comments"></i> Daily Routines</a>
+    <a href="#pdfs"><i class="fas fa-file-pdf"></i> PDFs y Trabajo en clase</a>
+    <a href="#video"><i class="fas fa-video"></i> Video</a>
+</div>
+
+<!-- TEMA 1 -->
+<div class="tema" id="tema1">
+<h2>Present Simple</h2>
+<div class="tema-grid">
+<div>
+<p>
+El Present Simple (Presente Simple) en inglés se usa para expresar rutinas, hábitos, verdades universales, hechos permanentes y acciones programadas, equivaliendo al presente de indicativo en español, con estructuras básicas de Sujeto + Verbo + Complemento (afirmación), Sujeto + do/does + not + Verbo (negación), y Auxiliar (do/does) + Sujeto + Verbo (interrogación), añadiendo '-s' al verbo en tercera persona singular (he, she, it) en afirmativo. 
+</p>
+<div class="ejemplos">
+<strong>Estructuras:</strong>
+<ul>
+<li>Afirmativo: Sujeto + Verbo (con -s/-es/-ies para he/she/it).
+He plays football. (Él juega al fútbol).</li>
+<li>Negativo: Sujeto + don't/doesn't + Verbo (base form).
+She doesn't like spinach. (A ella no le gusta la espinaca).</li>
+<li>nterrogativo: Do/Does + Sujeto + Verbo (base form).
+Do you speak English? (¿Hablas inglés?). </li>
+</ul>
+</div>
+</div>
+<a href="https://theangloacademy.mx/blog/simple-present-aprender-usar-tiempos-verbales/" target="_blank">
+<img src="https://i.imgur.com/fXAf7M3.jpeg">
+</a>
+</div>
+</div>
+
+<!-- TEMA 2 -->
+<div class="tema" id="tema2">
+<h2>Pronouns</h2>
+<div class="tema-grid">
+<div>
+<p>
+Los pronouns (pronombres) en inglés son palabras que sustituyen a sustantivos (nombres) para evitar repeticiones, haciendo el discurso más fluido, y se clasifican en tipos como personales (I, you, he, she, it, we, they), posesivos (mine, yours), demostrativos (this, that), etc., usados para referirse a personas, objetos o ideas sin nombrarlos directamente, variando según función (sujeto/objeto) y contexto. 
+¿Qué son los Pronombres?
+Son palabras que reemplazan nombres (sustantivos) para no repetirlos, mejorando la naturalidad. 
+Ejemplo: Maria is my friend. She is very kind. (María es mi amiga. Ella es muy amable). 
+</p>
+<div class="ejemplos">
+    <strong>Tipos y Usos Principales:</strong>
+<ul>
+<li>Personal Pronouns (Pronombres Personales): Se refieren a personas o cosas, y varían como sujeto (quien realiza la acción) u objeto (quien la recibe).
+Sujeto (Subject): I, you, he, she, it, we, they.
+I am happy. (Yo estoy feliz).
+Objeto (Object): me, you, him, her, it, us, them.
+He sees me. (Él me ve).
+</li>
+<li>Possessive Pronouns (Pronombres Posesivos): Indican pertenencia.
+Mine, yours, his, hers, its, ours, theirs.
+This book is mine. (Este libro es mío).
+</li>
+<li>Demonstrative Pronouns (Pronombres Demostrativos): Señalan algo a distancia.
+This, that, these, those.
+This is my car. (Este es mi coche).
+</li>
+</ul>
+</div>
+</div>
+<a href="https://www.britishcouncil.org.ve/blog/aprende-ingles/pronombres" target="_blank">
+<img src="https://i.imgur.com/EeGwXEH.jpeg">
+</a>
+</div>
+</div>
+
+<!-- TEMA 3 -->
+<div class="tema" id="tema3">
+<h2>Daily Routines</h2>
+<div class="tema-grid">
+<div>
+<p>
+"Daily routines" (rutinas diarias) en inglés se refiere a las acciones y hábitos que realizamos repetidamente cada día, desde que nos levantamos hasta que nos acostamos, como levantarse, desayunar o ir al trabajo, y se usan para practicar el Present Simple, vocabulario de acciones, adverbios de frecuencia y conectores, siendo fundamental para la conversación y la comunicación diaria en inglés. 
+</p>
+<div class="ejemplos">
+    <strong>Usos principales
+:</strong>
+<ul>
+<li>Practicar el Present Simple: Es el tiempo verbal ideal para hablar de hábitos y rutinas.
+Ejemplo: I wake up at 7 AM. (Me despierto a las 7 AM).
+</li>
+<li>Incorporar vocabulario clave: Aprender verbos como get up, have breakfast, go to work, brush your teeth, etc..</li>
+<li>Usar Adverbios de Frecuencia: Para indicar qué tan a menudo haces algo: always, usually, sometimes, often, never.
+Ejemplo: I usually have breakfast at 8 AM. (Normalmente desayuno a las 8 AM).
+</li>
+</ul>
+</div>
+</div>
+<a href="https://youtalkonline.com/blog/aprende-a-hablar-de-tu-rutina-diaria-en-ingles-con-estas-33-expresiones/" target="_blank">
+<img src="https://i.imgur.com/PfQnbSm.jpeg">
+</a>
+</div>
+</div>
+
+<!-- PDFS -->
+<div class="pdf-box" id="pdfs">
+<h3><i class="fas fa-file-pdf"></i> Material de Apoyo</h3>
+<ul>
+<li><a href="https://www.webcolegios.com/file/f0c4ba.pdf">Guía Present Simple</a></li>
+<li><a href="pdfs/Trabajo ingles.pdf">Evidencia De Trabajos En Clase
+</a></li>
+<li><a href="https://www.webcolegios.com/file/fa8a33.pdf">Guía Daily Routines</a></li>
+</ul>
+</div>
+
+<!-- VIDEO -->
+
+
+<div id="video">
+<h3><i class="fas fa-video"></i> Video Explicativo Sobre Pronouns</h3>
+<div class="video-wrapper">
+<video controls>
+<source src="videos/ingles.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<!-- BOTÓN EXAMEN -->
+<div style="text-align:center; margin-top:50px;">
+<a href="examen-ingles.html" class="btn-oficial">
+<i class="fas fa-pen"></i> Ir al Examen de Inglés
+</a>
+</div>
+
+</section>
+<footer style="margin-top: 40px; text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem;">
+            &copy; 2025 Portal de Aprendizaje Tercer Semestre Cecytem | Diseñado por Joshua David Padrón Santos
+        </footer>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

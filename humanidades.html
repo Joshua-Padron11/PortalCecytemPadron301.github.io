@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Humanidades | CECyTEM Cuautitlán</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+   <style>
+    .mini-menu{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+        justify-content:center;
+        margin:30px 0;
+    }
+    .mini-menu a{
+        background:var(--secondary);
+        color:white;
+        padding:10px 18px;
+        border-radius:30px;
+        text-decoration:none;
+        font-size:.85rem;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        transition:.3s;
+    }
+    .mini-menu a:hover{
+        background:var(--accent);
+        transform:translateY(-3px);
+    }
+    .tema{
+        margin-bottom:60px;
+    }
+    .tema-grid{
+        display:grid;
+        grid-template-columns:2fr 1fr;
+        gap:30px;
+    }
+    .tema img{
+        width:100%;
+        border-radius:20px;
+        box-shadow:var(--shadow-lg);
+        transition:.3s;
+        cursor:pointer;
+    }
+    .tema img:hover{
+        transform:scale(1.03);
+    }
+    .ejemplos{
+        background:#f8fafc;
+        border-left:5px solid var(--accent);
+        padding:20px;
+        border-radius:12px;
+        margin-top:25px;
+    }
+    .pdf-box{
+        background:#fef3c7;
+        padding:25px;
+        border-radius:18px;
+        margin:50px 0;
+    }
+
+    /* === VIDEO ADAPTADO AL MISMO TAMAÑO === */
+    .video-wrapper{
+        max-width:420px;
+        margin:25px auto;
+    }
+    .video-wrapper video{
+        width:100%;
+        height:auto;
+        border-radius:12px;
+    }
+
+    @media(max-width:900px){
+        .tema-grid{
+            grid-template-columns:1fr;
+        }
+
+        .video-wrapper{
+            max-width:100%;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<a href="#top" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<aside class="sidebar">
+    <img src="img/logo-cecytem.png" class="logo-principal">
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+            <li><a href="frameworks.html"><i class="fas fa-code"></i><span>Emplea Frameworks</span></a></li>
+            <li><a href="matematicas.html"><i class="fas fa-calculator"></i><span>Pensamiento Matemático</span></a></li>
+            <li><a href="ingles.html"><i class="fas fa-language"></i><span>Inglés</span></a></li>
+            <li><a href="humanidades.html" class="active"><i class="fas fa-globe-americas"></i><span>Humanidades</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="info-sidebar">
+        <div class="reloj-box">
+            <i class="far fa-clock"></i>
+            <div class="time-data">
+                <span id="reloj-digital"></span>
+                <span id="fecha-actual"></span>
+            </div>
+        </div>
+        <div class="visitantes-box">
+            <i class="fas fa-users"></i>
+            Visitantes: <strong id="visitantes">0</strong>
+        </div>
+    </div>
+</aside>
+
+<main class="main-content" id="top">
+
+<section class="section-card">
+<center>
+<h1>Humanidades III</h1>
+<p>
+Asignatura del <strong>tercer semestre</strong>, enfocada en la reflexión
+sobre la sociedad, la cultura, la ética y el pensamiento crítico.
+</p>
+</center>
+<div class="mini-menu">
+    <a href="#tema1"><i class="fas fa-brain"></i> Contrato Social</a>
+    <a href="#tema2"><i class="fas fa-balance-scale"></i> Esclavitud</a>
+    <a href="#tema3"><i class="fas fa-landmark"></i> Huella Ecológica</a>
+    <a href="#pdfs"><i class="fas fa-file-pdf"></i> PDFs y Trabajo En Clase</a>
+    <a href="#video"><i class="fas fa-video"></i> Video</a>
+</div>
+
+<!-- TEMA 1 -->
+<div class="tema" id="tema1">
+<h2>Contrato Social</h2>
+<div class="tema-grid">
+<div>
+<p>
+El contrato social es una teoría filosófica y política que explica el origen y la legitimidad del Estado y la sociedad, partiendo de la idea de un acuerdo (real o hipotético) entre individuos para establecer reglas de comportamiento y ceder parte de su libertad natural a cambio de seguridad y orden social. 
+</p>
+<div class="ejemplos">
+<strong>Los principales personajes asociados con el desarrollo de la teoría del contrato social son:</strong>
+<ul>
+<li>Thomas Hobbes (1588-1679): Considerado uno de los primeros filósofos modernos en articular una teoría contractualista detallada. En su obra Leviatán, argumenta que en el "estado de naturaleza", la vida humana sería "solitaria, pobre, desagradable, brutal y corta" (un estado de guerra de todos contra todos). El contrato social, para Hobbes, es un pacto mediante el cual los individuos renuncian a todos sus derechos naturales a un soberano absoluto (el Leviatán) para asegurar la paz y la seguridad.</li>
+<li>John Locke (1632-1704): En sus Dos ensayos sobre el gobierno civil, Locke también plantea un estado de naturaleza y un contrato social, pero con diferencias clave respecto a Hobbes. Para Locke, el propósito principal del gobierno es proteger los derechos naturales del pueblo (vida, libertad y propiedad). El pueblo conserva el derecho de rebelarse si el gobierno no cumple con este propósito.</li>
+<li>Jean-Jacques Rousseau (1712-1778): En su obra más conocida, El contrato social, Rousseau sostiene que el hombre en estado de naturaleza es esencialmente bueno y la civilización lo corrompe. El contrato social propuesto por él no es de sumisión a un soberano absoluto, sino un pacto de la comunidad con la comunidad misma, donde cada individuo cede su voluntad particular a la "voluntad general" (el interés común). La soberanía reside en el pueblo, y las leyes son legítimas si expresan esa voluntad general.</li>
+</ul>
+</div>
+</div>
+<a href="https://concepto.de/contrato-social/" target="_blank">
+<img src="https://i.imgur.com/zNwzy2R.png">
+</a>
+</div>
+</div>
+
+<!-- TEMA 2 -->
+<div class="tema" id="tema2">
+<h2>Esclavitud</h2>
+<div class="tema-grid">
+<div>
+<p>
+La esclavitud es la condición de una persona privada de libertad, tratada como propiedad de otra, sometida a dominio y trabajo forzado, una práctica histórica que ha mutado hacia formas modernas como el trabajo infantil forzoso, la explotación sexual y el matrimonio forzado, abarcando el trabajo no remunerado, el engaño y la coacción, y a pesar de su prohibición legal, sigue siendo un flagelo global vigente. 
+</p>
+<div class="ejemplos">
+<strong>Características:</strong>
+<ul>
+<li>Pérdida de derechos: La persona es despojada de sus derechos fundamentales, siendo reducida a un objeto.</li>
+<li>Control: Un tercero ejerce atributos de propiedad sobre el individuo, controlando su vida y trabajo.</li>
+<li>Explotación: Implica sujeción excesiva a una obligación o trabajo sin libertad de escape.</li>
+</ul>
+</div>
+</div>
+<a href="https://concepto.de/esclavitud/" target="_blank">
+<img src="https://i.imgur.com/lUISqVV.jpeg">
+</a>
+</div>
+</div>
+
+<!-- TEMA 3 -->
+<div class="tema" id="tema3">
+<h2>Huella Ecológica</h2>
+<div class="tema-grid">
+<div>
+<p>
+La huella ecológica es un indicador que mide el impacto ambiental de actividades humanas, calculando la superficie de tierra y agua necesarias para producir recursos y absorber residuos, expresándose en hectáreas globales (HAG); sus características clave incluyen la evaluación integral (alimentos, energía, infraestructuras), la medición a distintas escalas (individual, nacional), la comparación con la biocapacidad del planeta y su función como herramienta para fomentar la sostenibilidad y el consumo responsable. 
+</p>
+<div class="ejemplos">
+<strong>Factores que la componen:</strong>
+<ul>
+<li>Alimentación: Consumo de productos agrícolas, ganaderos y pesqueros.</li>
+<li>Vivienda y Consumo: Energía utilizada, bienes y servicios consumidos.</li>
+<li>Transporte: Huella generada por los desplazamientos.</li>
+</ul>
+</div>
+</div>
+<a href="https://es.wikipedia.org/wiki/Huella_ecol%C3%B3gica" target="_blank">
+<img src="https://i.imgur.com/lUzBmql.jpeg">
+</a>
+</div>
+</div>
+
+<!-- PDFS -->
+<div class="pdf-box" id="pdfs">
+<h3><i class="fas fa-file-pdf"></i> Material de Apoyo</h3>
+<ul>
+<li><a href="pdfs/Trabajos Humanidades.pdf">Evidencia De Trabajos En Clase</a></li>
+<li><a href="https://www.armyupress.army.mil/Portals/7/military-review/Archives/Spanish/MilitaryReview_20080630_art009SPA.pdf">El derecho internacional y la esclavitud</a></li>
+<li><a href="https://www.euskadi.eus/contenidos/documentacion/huella_ecologica/es_def/adjuntos/Huella-Ecologica_pais_vasco_WEB.pdf">HUELLA
+ECOLÓGICA
+DE EUSKADI
+2019</a></li>
+</ul>
+</div>
+
+<!-- VIDEO -->
+<div id="video">
+<h3><i class="fas fa-video"></i> Video Explicativo Sobre La Esclavitud</h3>
+<div class="video-wrapper">
+<video controls>
+<source src="videos/humanidades.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<!-- BOTÓN EXAMEN -->
+<div style="text-align:center; margin-top:50px;">
+<a href="examen-humanidades.html" class="btn-oficial">
+<i class="fas fa-pen"></i> Ir al Examen de Humanidades
+</a>
+</div>
+
+</section>
+<footer style="margin-top: 40px; text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem;">
+            &copy; 2025 Portal de Aprendizaje Tercer Semestre Cecytem | Diseñado por Joshua David Padrón Santos
+        </footer>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

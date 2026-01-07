@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Examen Matemáticas | CECyTEM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.exam-question{
+background:#f8fafc;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+border-left:5px solid var(--secondary);
+}
+.exam-question label{
+display:block;
+margin-bottom:6px;
+cursor:pointer;
+}
+.resultado{
+font-size:1.4rem;
+font-weight:bold;
+text-align:center;
+margin-top:30px;
+}
+.aprobado{color:green;}
+.reprobado{color:red;}
+</style>
+</head>
+
+<body>
+
+<main class="main-content">
+<section class="section-card">
+
+<h1>Examen de Pensamiento Matemático</h1>
+<p>20 preguntas de opción múltiple</p>
+
+<form id="quiz"></form>
+
+<div style="text-align:center;">
+<button class="btn-enviar" type="button" onclick="calificar()">Calificar</button>
+<br><br>
+<a href="matematicas.html" class="btn-oficial">
+<i class="fas fa-arrow-left"></i> Volver a Matemáticas
+</a>
+</div>
+
+<div class="resultado" id="resultado"></div>
+
+</section>
+</main>
+
+<script>
+const preguntas = [
+["Derivada de ln(x)",["1/x","x","ln(x)","0"],0],
+["Derivada de sen(x)",["cos(x)","sen(x)","-cos(x)","0"],0],
+["Derivada de cos(x)",["-sen(x)","cos(x)","sen(x)","0"],0],
+["Derivada de tan(x)",["sec²(x)","cos(x)","sen(x)","0"],0],
+["Derivada de e^x",["e^x","x","ln(x)","0"],0],
+["Regla para funciones compuestas",["Cadena","Producto","Cociente","Límites"],0],
+["d/dx (x²)",["2x","x","x²","0"],0],
+["d/dx ln(x²)",["2/x","1/x","x","ln(x)"],0],
+["d/dx sen(x²)",["2x cos(x²)","cos(x)","2x sen(x)","0"],0],
+["d/dx cos(3x)",["-3sen(3x)","sen(x)","-cos(x)","0"],0],
+["Derivada de una constante",["0","1","x","ln(x)"],0],
+["d/dx x³",["3x²","x²","x","0"],0],
+["d/dx ln(5x)",["1/x","5/x","ln(x)","0"],0],
+["Derivada de sec(x)",["sec(x)tan(x)","tan(x)","cos(x)","0"],0],
+["d/dx cos(x²)",["-2x sen(x²)","cos(x)","-sen(x)","0"],0],
+["Base del logaritmo natural",["e","10","2","π"],0],
+["Derivada de e^(3x)",["3e^(3x)","e^x","3x","0"],0],
+["Función periódica",["Trigonométrica","Lineal","Logarítmica","Exponencial"],0],
+["Derivada de x",["1","x","0","2"],0],
+["¿Cuál es la derivada de x² + 3x?",["2x + 3","x²","3x","2x"],0]
+];
+
+const quiz=document.getElementById("quiz");
+
+preguntas.forEach((p,i)=>{
+let opciones="";
+p[1].forEach((op,j)=>{
+opciones+=`
+<label>
+<input type="radio" name="p${i}" value="${j}"> ${op}
+</label>`;
+});
+quiz.innerHTML+=`
+<div class="exam-question">
+<h4>${i+1}. ${p[0]}</h4>
+${opciones}
+</div>`;
+});
+
+function calificar(){
+let score=0;
+
+for(let i=0;i<preguntas.length;i++){
+const r=document.querySelector('input[name="p'+i+'"]:checked');
+if(!r){
+alert("Debes responder todas las preguntas antes de calificar.");
+return;
+}
+if(parseInt(r.value)===preguntas[i][2]) score++;
+}
+
+let mensaje = score>=12
+? `<span class="aprobado">APROBADO</span>`
+: `<span class="reprobado">REPROBADO</span>`;
+
+document.getElementById("resultado").innerHTML =
+`Resultado: ${score} / 20 <br>${mensaje}`;
+}
+</script>
+
+</body>
+</html>

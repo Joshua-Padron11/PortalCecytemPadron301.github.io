@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Examen Frameworks | CECyTEM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.exam-question{
+background:#f8fafc;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+border-left:5px solid var(--secondary);
+}
+.exam-question label{
+display:block;
+margin-bottom:6px;
+cursor:pointer;
+}
+.resultado{
+font-size:1.4rem;
+font-weight:bold;
+text-align:center;
+margin-top:30px;
+}
+.aprobado{color:green;}
+.reprobado{color:red;}
+</style>
+</head>
+
+<body>
+
+<main class="main-content">
+
+<section class="section-card">
+
+<h1>Examen de Frameworks</h1>
+<p>20 preguntas de opción múltiple</p>
+
+<form id="quiz"></form>
+
+<div style="text-align:center;">
+<button class="btn-enviar" type="button" onclick="calificar()">Calificar</button>
+<br><br>
+<a href="frameworks.html" class="btn-oficial">
+<i class="fas fa-arrow-left"></i> Volver a Frameworks
+</a>
+</div>
+
+<div class="resultado" id="resultado"></div>
+
+</section>
+</main>
+
+<script>
+const preguntas = [
+["¿Qué es un framework?",["Un lenguaje","Un conjunto de herramientas","Un sistema operativo","Un navegador"],1],
+["¿Para qué se usa React?",["Bases de datos","Interfaces de usuario","Redes","Diseño gráfico"],1],
+["¿Qué es Node.js?",["Framework CSS","Entorno de ejecución JavaScript","Editor","Lenguaje"],1],
+["¿Qué es npm?",["Servidor","Gestor de paquetes","Framework","Base de datos"],1],
+["¿Qué permite Vite?",["Cargar lento","Desarrollo rápido","Solo HTML","No usar JS"],1],
+["¿Qué es un componente?",["Archivo","Parte reutilizable","Servidor","Base de datos"],1],
+["¿Framework frontend?",["Laravel","React","MySQL","Node"],1],
+["¿Framework backend?",["CSS","HTML","Laravel","Photoshop"],2],
+["¿Qué es una SPA?",["Aplicación móvil","Aplicación de una sola página","Programa de escritorio","Lenguaje"],1],
+["¿Qué lenguaje usa React?",["Python","Java","JavaScript","PHP"],2],
+["¿Qué comando instala dependencias?",["npm start","npm install","node run","vite dev"],1],
+["¿Qué es JSX?",["CSS","HTML","Sintaxis de React","Servidor"],2],
+["¿Quién creó React?",["Google","Facebook","Microsoft","Apple"],1],
+["¿Ventaja de usar frameworks?",["Más errores","Menos organización","Más productividad","Más código"],2],
+["¿Qué es GitHub?",["Editor","Repositorio","Framework","Lenguaje"],1],
+["¿Qué es una dependencia?",["Archivo","Librería externa","Servidor","Variable"],1],
+["¿Qué es frontend?",["Servidor","Interfaz","Base de datos","API"],1],
+["¿Qué es backend?",["Diseño","Interfaz","Servidor","Estilo"],2],
+["¿Framework CSS?",["React","Bootstrap","Node","PHP"],1],
+["¿Usar frameworks permite?",["Reducir productividad","Reutilizar código","Eliminar JavaScript","Evitar diseño"],1]
+];
+
+const quiz=document.getElementById("quiz");
+
+preguntas.forEach((p,i)=>{
+let opciones="";
+p[1].forEach((op,j)=>{
+opciones+=`
+<label>
+<input type="radio" name="p${i}" value="${j}"> ${op}
+</label>`;
+});
+quiz.innerHTML+=`
+<div class="exam-question">
+<h4>${i+1}. ${p[0]}</h4>
+${opciones}
+</div>`;
+});
+
+function calificar(){
+let score=0;
+
+for(let i=0;i<preguntas.length;i++){
+const r=document.querySelector('input[name="p'+i+'"]:checked');
+if(!r){
+alert("Debes responder todas las preguntas antes de calificar.");
+return;
+}
+if(parseInt(r.value)===preguntas[i][2]) score++;
+}
+
+let mensaje = score>=12
+? `<span class="aprobado">APROBADO</span>`
+: `<span class="reprobado">REPROBADO</span>`;
+
+document.getElementById("resultado").innerHTML =
+`Resultado: ${score} / 20 <br>${mensaje}`;
+}
+</script>
+
+</body>
+</html>

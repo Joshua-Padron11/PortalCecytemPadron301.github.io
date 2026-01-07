@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Emplea Frameworks | CECyTEM Cuautitlán</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .mini-menu{
+        display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+        justify-content:center;
+        margin:30px 0;
+    }
+    .mini-menu a{
+        background:var(--secondary);
+        color:white;
+        padding:10px 18px;
+        border-radius:30px;
+        text-decoration:none;
+        font-size:.85rem;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        transition:.3s;
+    }
+    .mini-menu a:hover{
+        background:var(--accent);
+        transform:translateY(-3px);
+    }
+    .tema{
+        margin-bottom:60px;
+    }
+    .tema-grid{
+        display:grid;
+        grid-template-columns:2fr 1fr;
+        gap:30px;
+    }
+    .tema img{
+        width:100%;
+        border-radius:20px;
+        box-shadow:var(--shadow-lg);
+        transition:.3s;
+        cursor:pointer;
+    }
+    .tema img:hover{
+        transform:scale(1.03);
+    }
+    .ejemplos{
+        background:#f8fafc;
+        border-left:5px solid var(--accent);
+        padding:20px;
+        border-radius:12px;
+        margin-top:25px;
+    }
+    .pdf-box{
+        background:#fef3c7;
+        padding:25px;
+        border-radius:18px;
+        margin:50px 0;
+    }
+
+    /* === VIDEO ADAPTADO AL MISMO TAMAÑO === */
+    .video-wrapper{
+        max-width:420px;
+        margin:25px auto;
+    }
+    .video-wrapper video{
+        width:100%;
+        height:auto;
+        border-radius:12px;
+    }
+
+    @media(max-width:900px){
+        .tema-grid{
+            grid-template-columns:1fr;
+        }
+
+        .video-wrapper{
+            max-width:100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<a href="#top" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<aside class="sidebar">
+    <img src="img/logo-cecytem.png" class="logo-principal">
+
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+            <li><a href="frameworks.html" class="active"><i class="fas fa-code"></i><span>Emplea Frameworks</span></a></li>
+            <li><a href="matematicas.html"><i class="fas fa-calculator"></i><span>Pensamiento Matemático</span></a></li>
+            <li><a href="ingles.html"><i class="fas fa-language"></i><span>Inglés</span></a></li>
+            <li><a href="humanidades.html"><i class="fas fa-globe-americas"></i><span>Humanidades</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="info-sidebar">
+        <div class="reloj-box">
+            <i class="far fa-clock"></i>
+            <div class="time-data">
+                <span id="reloj-digital"></span>
+                <span id="fecha-actual"></span>
+            </div>
+        </div>
+        <div class="visitantes-box">
+            <i class="fas fa-users"></i>
+            Visitantes: <strong id="visitantes">0</strong>
+        </div>
+    </div>
+</aside>
+
+<main class="main-content" id="top">
+
+<section class="section-card">
+
+<center>
+    <h1>Emplea Frameworks para el Desarrollo de Software III</h1>
+<p>
+Asignatura del <strong>tercer semestre</strong>, enfocada en el uso de
+<strong>frameworks modernos</strong> para el desarrollo de aplicaciones web.
+</p>
+</center>
+
+<div class="mini-menu">
+    <a href="#tema1"><i class="fab fa-react"></i> React</a>
+    <a href="#tema2"><i class="fab fa-node-js"></i> Node.js</a>
+    <a href="#tema3"><i class="fas fa-bolt"></i> Vite</a>
+    <a href="#pdfs"><i class="fas fa-file-pdf"></i> PDFs y Trabajo en clase</a>
+    <a href="#video"><i class="fas fa-video"></i> Video</a>
+</div>
+
+<!-- TEMA 1 -->
+<div class="tema" id="tema1">
+<h2>React</h2>
+<div class="tema-grid">
+<div>
+<p>
+React es una biblioteca de JavaScript para construir interfaces de usuario (UI) interactivas y eficientes, enfocada en la creación de componentes reutilizables que forman la UI de aplicaciones web y móviles, usando JSX para el marcado y un DOM virtual para actualizar la pantalla de forma rápida, permitiendo un desarrollo declarativo y modular. Sus funciones clave incluyen la gestión de componentes, la manipulación del DOM virtual y la construcción de UIs reactivas y escalables para diversas plataformas. 
+</p>
+<div class="ejemplos">
+<strong>Funciones y características principales:</strong>
+<ul>
+<li>Componentes: Divide la UI en piezas independientes y reutilizables (botones, formularios, etc.), que son como bloques de construcción (Lego) para aplicaciones más grandes y complejas.</li>
+<li>Reutilización de Código: Los componentes se pueden reutilizar en diferentes partes de la aplicación o incluso en distintos proyectos, ahorrando tiempo y esfuerzo.</li>
+<li>Enfoque Declarativo: Describes cómo debe verse la UI en diferentes estados, y React se encarga de cómo actualizarla, haciendo el código más predecible y fácil de depurar.</li>
+</ul>
+</div>
+</div>
+<a href="https://www.oscarblancarteblog.com/2017/05/02/introduccion-react-js/" target="_blank">
+<img src="https://i.imgur.com/ijoTMns.png">
+</a>
+</div>
+</div>
+
+<!-- TEMA 2 -->
+<div class="tema" id="tema2">
+<h2>Node.js</h2>
+<div class="tema-grid">
+<div>
+<p>
+Node.js es un entorno de ejecución de JavaScript de código abierto que permite ejecutar código JS fuera del navegador, en el servidor, usando el motor V8 de Chrome. Su función principal es construir aplicaciones escalables y rápidas, manejando múltiples conexiones simultáneas gracias a su modelo asíncrono y no bloqueante, ideal para APIs, microservicios, IoT y aplicaciones en tiempo real como chats o streaming. 
+</p>
+<div class="ejemplos">
+<strong>Funciones y características principales:</strong>
+<ul>
+<li>Ejecución en el servidor: Permite usar JavaScript para la lógica del backend, gestionando bases de datos, autenticación y APIs.</li>
+<li>Aplicaciones comunes: Ideal para APIs RESTful, microservicios, aplicaciones en tiempo real, IoT, herramientas de línea de comandos y más, según LucusHost y Simform. </li>
+<li>Escalabilidad: Su arquitectura lo hace apto para aplicaciones con muchas conexiones simultáneas, como las de streaming o IoT.</li>
+</ul>
+</div>
+</div>
+<a href="https://www.ionos.mx/digitalguide/paginas-web/desarrollo-web/introduccion-a-nodejs/" target="_blank">
+<img src="https://i.imgur.com/Gyfo5of.png">
+</a>
+</div>
+</div>
+
+<!-- TEMA 3 -->
+<div class="tema" id="tema3">
+<h2>Vite</h2>
+<div class="tema-grid">
+<div>
+<p>
+Vite es una herramienta moderna de desarrollo web que ofrece una experiencia ágil y veloz para aplicaciones frontend, funcionando como servidor de desarrollo y como compilador para producción, usando módulos ES nativos para arranques instantáneos y Hot Module Replacement (HMR) rápido, y Rollup para generar builds optimizados, con gran soporte para React, Vue, Svelte y TypeScript. Sus funciones principales son: arranque instantáneo, HMR ultra rápido, soporte para frameworks, y compilación optimizada. 
+</p>
+<div class="ejemplos">
+<strong>Funciones y características principales:</strong>
+<ul>
+<li>Servidor de Desarrollo (Dev Server):
+Arranque Instantáneo: Sirve código fuente directamente como Módulos ES nativos, permitiendo que el navegador haga gran parte del trabajo y arranque casi al instante.</li>
+<li>Soporte de Frameworks:
+Integración con Frameworks Populares: Funciona sin problemas con React, Vue, Svelte, y más, ofreciendo plantillas preconfiguradas.
+</li>
+<li>Flexibilidad y Simplicidad:
+Configuración Mínima: Simplifica la configuración inicial, permitiendo a los desarrolladores empezar a codificar rápidamente.</li>
+</ul>
+</div>
+</div>
+<a href="https://es.vite.dev/guide/" target="_blank">
+<img src="https://i.imgur.com/nG74Pbt.jpeg">
+</a>
+</div>
+</div>
+
+<!-- PDFS -->
+<div class="pdf-box" id="pdfs">
+<h3><i class="fas fa-file-pdf"></i> Material de Apoyo</h3>
+<ul>
+<li><a href="https://elhacker.info/manuales/Lenguajes%20de%20Programacion/React/Manual%20de%20React.pdf">Manual De React</a></li>
+<li><a href="https://nachoiborraies.github.io/nodejs/md/es/01b.pdf">Introducción a Node.js</a></li>
+<li><a href="pdfs/Trabajo-frame.pdf">Evidencia De Trabajos En Clase</a></li>
+</ul>
+</div>
+
+<!-- VIDEO -->
+<div id="video">
+<h3><i class="fas fa-video"></i> Video Explicativo Sobre React, Node js, Vite</h3>
+<div class="video-wrapper">
+<video controls>
+<source src="videos/frameworks.mp4" type="video/mp4">
+</video>
+</div>
+</div>
+
+<!-- BOTÓN EXAMEN -->
+<div style="text-align:center; margin-top:50px;">
+<a href="examen-frameworks.html" class="btn-oficial">
+<i class="fas fa-pen"></i> Ir al Examen de Frameworks
+</a>
+</div>
+
+</section>
+<footer style="margin-top: 40px; text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem;">
+            &copy; 2025 Portal de Aprendizaje Tercer Semestre Cecytem | Diseñado por Joshua David Padrón Santos
+        </footer>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
